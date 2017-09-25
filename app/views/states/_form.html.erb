@@ -1,0 +1,47 @@
+<%= form_with(model: state, local: true) do |form| %>
+  <% if state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(state.errors.count, "error") %> prohibited this state from being saved:</h2>
+
+      <ul>
+      <% state.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-md-2">
+    <%= form.label :Nombre %>
+    <%= form.text_field :name, id: :state_name, :class =>'form-control' %>
+  </div>
+
+  <div class="field col-md-2">
+    <%= form.label :Tipo %>
+    <%= form.select :typeofstate  , options_for_select(Typeinmu.all.map{|s|[s.name, s.id ]}),{},{:class=> "form-control" } %>
+  </div>
+
+  <div class="field col-md-1">
+    <%= form.label :Area %>
+    <%= form.number_field :area, id: :state_area,  :class =>'form-control'%>
+  </div>
+
+  <div class="field col-md-2">
+    <%= form.label :Cantidad_de_Pisos %>
+    <%= form.number_field :countfloor, id: :state_countfloor, :class =>'form-control' %>
+  </div>
+
+  <div class="field col-md-1">
+    <%= form.label :CUARTOS %>
+    <%= form.number_field :countRoom, id: :state_countRoom, :class =>'form-control' %>
+  </div>
+
+  <div class="field col-md-2">
+    <%= form.label :Dirección %>
+    <%= form.text_field :address, id: :state_address, :class =>'form-control' %>
+  </div>
+
+  <div class="actions col-md-2 cold-xs-2">
+    <%= form.submit 'Crear Inmueble', :class =>'btn btn-default'%>
+  </div>
+<% end %><br>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inmu</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<% if user_signed_in? %>
+    <%= render 'layouts/nav'%>
+    
+<% end %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/alert'%>
+    <%= yield %>
+
+<% if user_signed_in?%>
+    <%= render 'layouts/main'%>
+
+<% end %>
+
+  </body>
+</html>

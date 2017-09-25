@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: MyString
+  type_rental: MyString
+  time: MyString
+  type_state: false
+  time_state: 1
+
+two:
+  client: MyString
+  type_rental: MyString
+  time: MyString
+  type_state: false
+  time_state: 1

@@ -1,0 +1,43 @@
+<%= form_with(model: rental, local: true) do |form| %>
+  <% if rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+      <% rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Cliente %><br>
+    <%= form.select :client, options_for_select(Client.all.map{|s|[s.name, s.id ]}),{},{:class=> "form-control",:style=>"float:left" } %><br>
+
+  </div>
+
+  <div class="field"><br>
+    <%= form.label :Edificio %><br>
+    <%= form.select :type_rental  , options_for_select(State.all.map{|s|[s.name, s.id ]}),{},{:class=> "form-control",:style=>"float:left" } %><br>
+  </div>
+
+  <div class="field"><br>
+    <%= form.label :Cuartos %><br>
+    <%= form.text_field :room, id: :rental_time, :class=> "form-control" %><br>
+  </div>
+
+  <div class="field"><br>
+    <%= form.label :Cheque %><br>
+    <%= form.check_box :type_state, id: :rental_type_state, :class=> "form-control" %><br>
+  </div>
+
+  <div class="field"><br>
+    <%= form.label :Tiempo_De_Renta %>
+    <%= form.number_field :room_state, id: :rental_time_state, :class=> "form-control" %><br>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

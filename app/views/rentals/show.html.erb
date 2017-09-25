@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @rental.client %>
+</p>
+
+<p>
+  <strong>Type rental:</strong>
+  <%= @rental.type_rental %>
+</p>
+
+<p>
+  <strong>room:</strong>
+  <%= @rental.room %>
+</p>
+
+<p>
+  <strong>Type state:</strong>
+  <%= @rental.type_state %>
+</p>
+
+<p>
+  <strong>Time state:</strong>
+  <%= @rental.room_state %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

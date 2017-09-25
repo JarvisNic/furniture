@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipos de Inmuebles</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typeinmus.each do |typeinmu| %>
+      <tr>
+        <td><%= typeinmu.name %></td>
+        <td><%= link_to 'Ver', typeinmu, :class =>'btn btn-default' %></td>
+        <td><%= link_to 'Editar', edit_typeinmu_path(typeinmu), :class =>'btn btn-default' %></td>
+        <td><%= link_to 'Eliminar', typeinmu, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn btn-default' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

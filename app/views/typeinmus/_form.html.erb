@@ -1,0 +1,23 @@
+<%= form_with(model: typeinmu, local: true) do |form| %>
+  <% if typeinmu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(typeinmu.errors.count, "error") %> prohibited this typeinmu from being saved:</h2>
+
+      <ul>
+      <% typeinmu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class=" cold-md-12">
+  <div class="field col-md-3">
+    <%= form.label :nombre %><br>
+    <%= form.text_field :name, id: :typeinmu_name, :class => 'form-control' %><br>
+  </div>
+
+  <div class="actions col-md-2">
+    <%= form.submit 'Crear', :class => 'btn btn-default' %>
+  </div>
+<% end %>
+</div>

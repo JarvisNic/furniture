@@ -1,0 +1,20 @@
+
+  <div>
+    <% if current_user.email == 'admin@inmu.com' %>
+    <div class="col-md-9">
+
+
+  <%= link_to 'Registra un nuevo Tipo de Inmueble', new_typeinmu_path, :class => 'btn btn-default navbar-btn' %>
+  <%= link_to 'Registra un nuevo Inmueble', new_state_path, :class => 'btn btn-default navbar-btn' %>
+  <%= link_to 'Registra un nuevo Inquilino', new_client_path, :class => 'btn btn-default navbar-btn'%>
+  <%= link_to 'Registra un nuevo Alquiler', new_rental_path, :class => 'btn btn-default navbar-btn'%>
+
+   </div>
+<% else %>
+  <%= link_to 'Registra un nuevo Inmueble', new_state_path %>
+
+<% end %>
+</div>
+<div class=" col-md-6">
+<%= link_to "Vuelvo al inicio", controller: '/welcome', action: 'index', :class => "btn btn-default navbar-btn" %>
+</div>
